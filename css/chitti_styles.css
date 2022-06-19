@@ -1,0 +1,308 @@
+body {
+  margin: 0;
+  font-family: 'Merriweather', serif;
+  background-color: #bca0dc;
+  color:#3c1361;
+  overflow-x:hidden;
+  overflow-y: hidden;
+  align-content: center;
+}
+
+h1 {
+  position: relative;
+  font-size: 3rem;
+  margin: 100 auto 0 auto;
+  text-align: center;
+}
+
+#main {
+  margin-top: 200;
+  font-size: 3.5rem;
+}
+
+.mainresult {
+  position: relative;
+  font-size: 1rem;
+  width: 25%;
+  margin: 50 auto 0 auto;
+  text-align: left;
+}
+
+.mainresult2 {
+  position: relative;
+  font-size: 1rem;
+  width: 22%;
+  margin: 50 auto 0 auto;
+  text-align: left;
+}
+
+.mainresult3 {
+  position: relative;
+  font-size: 1rem;
+  width: 34%;
+  margin: 50 auto 0 auto;
+  text-align: left;
+}
+
+.forms {
+  position: relative;
+  left:800px; 
+  top:-420px;
+}
+
+.form {
+  margin: 2 auto 2 auto;
+}
+
+.form6 {
+  margin: 2 auto 2 auto;
+}
+
+.form31 {
+  margin: 2 auto 2 auto;
+}
+
+.form32 {
+  margin: 2 auto 2 auto;
+}
+
+.form33 {
+  margin: 2 auto 2 auto;
+}
+
+.copyright {
+  position:relative;
+  display:inline-block;
+  margin-top: 180px;
+  color: #bca0dc;
+  font-size: 0.75rem;
+  padding: 20px 0 0;
+  margin:180 auto 0 700;
+}
+
+.copyright:hover {
+  color: #3c1361;
+  font-size: 0.75rem;
+  padding: 20px 0 0;
+}
+
+.button-1 {
+background-color: #3c1361;
+border-radius: 8px;
+border-style: none;
+box-sizing: border-box;
+color: #bca0dc;
+cursor: pointer;
+display: inline-block;
+font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+font-weight: 500;
+height: 40px;
+line-height: 20px;
+list-style: none;
+margin: 0;
+outline: none;
+padding: 10px 16px;
+position: relative;
+text-align: center;
+text-decoration: none;
+transition: color 100ms;
+vertical-align: baseline;
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
+}
+
+.button-1:hover {
+background-color: #900a9f;
+}
+
+#remaining_due {
+  display: inline-block;
+  margin: -155 1110;
+  
+
+}
+
+#dividend_growth {
+  display: inline-block;
+  margin: 100 auto 0 110;
+
+}
+
+#amount_to_bid {
+  display: inline-block;
+  margin: 100 auto 0 200;
+
+}
+
+#text_remaining {
+  text-align: center;
+  padding-top: 3vw;
+}
+
+.segment{
+  background-color: #3c1361;
+  color:#bca0dc;
+  width: 20vw; 
+  height:10vw;
+  text-decoration: none;
+}
+
+.segment:hover{
+  background-color: #900a9f;
+}
+
+.forms2 {
+  position: relative;
+  left:760px; 
+  top:-170px;
+}
+
+.forms3 {
+  position: relative;
+  left:860px; 
+  top:-255px;
+}
+
+.result, textarea { 
+  background:#e8f3db;
+  border-color:#e8f3db;
+ }
+
+
+ @media (max-width: 1000px) {
+
+  h1 {
+    position: relative;
+    font-size: 3rem;
+    margin: 100 0 0 20;
+    text-align: center;
+  }
+  
+  #main {
+    margin-top: 100;
+    font-size: 8rem;
+  }
+
+  #dividend_growth {
+    display: block;
+    margin: auto;
+  }
+
+  #remaining_due {
+    display: block;
+    margin: auto;
+  
+  }
+  
+  #amount_to_bid {
+    display: block;
+    margin: auto;
+  
+  }
+
+  .segment {
+    background-color: #3c1361;
+    color:#bca0dc;
+    width: 80vw; 
+    height:20vh;
+    margin-left: 50;
+  }
+
+  #text_remaining {
+    text-align: center;
+    font-size: 4rem;
+    padding-top: 7.5vh;
+  }
+  
+  .main2 {
+    padding-top: 200px;
+    font-size: 10rem;
+    margin: 500 -300 100 200;
+  }
+
+  .main3 {
+    font-size: 10rem;
+    margin: 500 -300 100 200;
+  }
+
+  .main4 {
+    font-size: 10rem;
+    margin: 200 -300 100 200;
+  }
+
+  .mainresult {
+    position: relative;
+    font-size: 4rem;
+    width: 100%;
+    margin: 50 auto 0 130;
+    text-align: left;
+  }
+
+  .mainresult2 {
+    position: relative;
+    font-size: 4rem;
+    width: 100%;
+    margin: 50 auto 0 220;
+    text-align: left;
+  }
+
+  .mainresult3 {
+    position: relative;
+    font-size: 4rem;
+    width: 100%;
+    margin: 50 auto 0 100;
+    text-align: left;
+  }
+
+  .form {
+    margin: 47 auto;
+  }
+
+  .form6 {
+    margin: 46.5 auto;
+    font-size: 30px;
+  }
+
+  .forms {
+    left:1000px; 
+    top:-1710px;
+  }
+
+  .forms2{
+    left:900px; 
+    top:-710px;
+  }
+
+  .forms3{
+    left:990px; 
+    top:-1220px;
+  }
+
+  .form31 {
+    margin: 40 auto;
+    font-size: 50px;
+  }
+
+  .form32 {
+    margin: 80 auto 10 auto;
+    font-size: 50px;
+  }
+
+  .form33 {
+    margin: 130 auto 50 auto;
+    font-size: 50px;
+  }
+
+  input {
+    padding: 10px;
+    width:40%;
+    font-size: 30px;
+  }
+
+  .button-1 {
+    width:15%;
+    height: 3%;
+  }
+ }

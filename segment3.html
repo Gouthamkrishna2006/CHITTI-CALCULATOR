@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <title>CHITTI CALCULATOR</title>
+        <link rel="stylesheet" href="css/chitti_styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Montserrat:wght@600&family=Sacramento&display=swap" rel="stylesheet">
+        <link rel="icon" href="favicon.ico">
+        <script>
+
+        function calculate(){
+            var total_months, chitti_amount, months_of_participating, amount_you_intend_to_bid_on, monthly_amount, interest_charged_on_the_amount_recieved;
+                total_months = document.getElementById('total_months_form').value;
+                chitti_amount = document.getElementById('chitti_amount_form').value;
+                months_of_participating = document.getElementById('months_of_participating_form').value;
+                amount_you_intend_to_bid_on = document.getElementById('amount_you_intend_to_bid_on_form').value;
+                monthly_amount = chitti_amount/total_months
+                interest_charged_on_the_amount_recieved = ((chitti_amount-(chitti_amount*0.05)-amount_you_intend_to_bid_on)/amount_you_intend_to_bid_on/(total_months-months_of_participating)*12)*100
+                interest_charged_on_the_amount_recieved = interest_charged_on_the_amount_recieved.toFixed(2);
+                interest_charged_on_the_amount_recieved +="%"
+
+                document.getElementById('monthly_amount_form').value = monthly_amount;
+                document.getElementById('interest_charged_on_the_amount_recieved_form').value = interest_charged_on_the_amount_recieved;
+                checkfilled()
+        }
+            
+        function checkfilled(){
+            var str = document.getElementById('interest_charged_on_the_amount_recieved_form').value
+            str = str.replace(/[%]/g, '');
+            if (str <= 6) {
+                document.getElementById('interest_charged_on_the_amount_recieved_form').style.background ='#7bb78c';
+                document.getElementById('interest_charged_on_the_amount_recieved_form').style.borderColor ='#7bb78c';
+            }else {
+                if (str <= 10){
+                    document.getElementById('interest_charged_on_the_amount_recieved_form').style.background = '#fed000';
+                    document.getElementById('interest_charged_on_the_amount_recieved_form').style.borderColor ='#fed000';
+                } else {
+                    document.getElementById('interest_charged_on_the_amount_recieved_form').style.background = '#c54e57';
+                    document.getElementById('interest_charged_on_the_amount_recieved_form').style.borderColor ='#c54e57';
+                }
+            }
+        }
+            
+        </script>
+    </head>
+    <body>
+        <h1 class = "main3">CHITTI CALCULATOR</h1>
+        <div class="mainresult3">
+            <h4>Total Months:</h4>
+            <h4>Chitti Amount:</h4>
+            <h4>Months of Participating:</h4>
+            <h4>Amount You Intend To Bid on:</h4>
+            <h4>Monthly Amount:</h4>
+            <h4>Interest Charged on the Amount Recieved:</h4>
+        </div>
+        <div class ="forms3">
+            <form>
+                <input type="number" class="form31" id="total_months_form" placeholder="Required">
+            </form>
+            <form>
+                <input type="number" class="form31" id="chitti_amount_form" placeholder="Required">
+            </form>
+            <form>
+                <input type="number" class="form31" id="months_of_participating_form" placeholder="Required">
+            </form>
+            <form>
+                <input type="number" class="form32" id="amount_you_intend_to_bid_on_form" placeholder="Required">
+            </form>
+            <form>
+                <input type="text" class="form32" id="monthly_amount_form" readonly>
+            </form>
+            <form>
+                <input type="text" class="form33 result" id="interest_charged_on_the_amount_recieved_form" readonly>
+            </form>
+            <input type="button" value="Submit" class="button-1" onclick="calculate()">
+        </div>
+    </body>
+</html>

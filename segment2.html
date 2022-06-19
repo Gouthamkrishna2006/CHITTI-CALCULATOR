@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>CHITTI CALCULATOR</title>
+        <link rel="stylesheet" href="css/chitti_styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Montserrat:wght@600&family=Sacramento&display=swap" rel="stylesheet">
+        <link rel="icon" href="favicon.ico">
+        <script>
+            function calculate(){
+                var gross_amount, net_amount, dividend_amount, dividend_growth;
+                gross_amount = document.getElementById('gross_amount_form').value;
+                net_amount = document.getElementById('net_amount_form').value;
+                dividend_amount = document.getElementById('dividend_amount_form').value;
+                
+                dividend_amount = gross_amount - net_amount              
+                dividend_growth = dividend_amount/gross_amount *100
+                dividend_growth = dividend_growth.toFixed(2);
+                dividend_growth+= "%";
+                
+                document.getElementById('gross_amount_form').value = gross_amount;
+                document.getElementById('net_amount_form').value = net_amount;
+                document.getElementById('dividend_amount_form').value = dividend_amount;
+                document.getElementById('dividend_growth_form').value = dividend_growth;
+                checkfilled()
+            }
+            
+        function checkfilled(){
+            var str = document.getElementById('dividend_growth_form').value
+            str = str.replace(/[%]/g, '');
+            if (str <= 15) {
+                document.getElementById('dividend_growth_form').style.background = '#c54e57';
+                document.getElementById('dividend_growth_form').style.borderColor ='#c54e57';
+            }else {
+                if (str <= 20){
+                    document.getElementById('dividend_growth_form').style.background = '#fed000';
+                    document.getElementById('dividend_growth_form').style.borderColor ='#fed000';
+                } else {
+                    document.getElementById('dividend_growth_form').style.background ='#7bb78c';
+                    document.getElementById('dividend_growth_form').style.borderColor ='#7bb78c';
+                }
+            }
+        }
+        </script>
+    </head>
+    <body>
+        <h1 class = "main2">CHITTI CALCULATOR</h1>
+        <div class="mainresult2">
+            <h4>Gross Amount:</h4>
+            <h4>Net Amount:</h4>
+            <h4>Dividend:</h4>
+            <h4>Dividend Growth:</h4>
+        </div>
+        <div class ="forms2">
+            <form>
+                <input type="number" class="form" id="gross_amount_form" placeholder="Required">
+            </form>
+            <form>
+                <input type="number" class="form" id="net_amount_form" placeholder="Required">
+            </form>
+            <form>
+                <input type="text" class="form" id="dividend_amount_form" readonly>
+            </form>
+            <form>
+                <input type="text" class="form result" id="dividend_growth_form" readonly>
+            </form>
+            <input type="button" value="Submit" class="button-1" onclick="calculate()">
+        </div>
+    </body>
+</html>

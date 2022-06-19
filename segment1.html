@@ -1,0 +1,137 @@
+<html>
+    <head>
+        <title>CHITTI CALCULATOR</title>
+        <link rel="stylesheet" href="css/chitti_styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Montserrat:wght@600&family=Sacramento&display=swap" rel="stylesheet">
+        <link rel="icon" href="favicon.ico">
+        <script>
+            function calculate(){
+                var already_paid, chitti_amount, investment_set_1, investment_set_2, investment_set_3, investment_set_4, investment_set_5, investment_set_6, investment_set_7, is_substitute, money_recieved_at_end, month_set_1, month_set_2, month_set_3, monthly_amount, monthly_amount_1, monthly_amount_2, monthly_amount_3, monthly_amount_4, monthly_amount_5, monthly_amount_6, months_already_paid, months_left_to_pay, net_profit, percent_paid, remaining_due, return_on_investment, total_investment, total_months;
+                total_months = document.getElementById('total_months_form').value;
+                chitti_amount = document.getElementById('chitti_amount_form').value;
+                monthly_amount = chitti_amount / total_months;
+                month_set_1 = total_months * 0.35;
+                month_set_2 = total_months * 0.12;
+                month_set_3 = total_months * 0.04;
+                monthly_amount_1 = monthly_amount * (65 / 100);
+                monthly_amount_2 = monthly_amount * (75 / 100);
+                monthly_amount_3 = monthly_amount * (80 / 100);
+                monthly_amount_4 = monthly_amount * (85 / 100);
+                monthly_amount_5 = monthly_amount * (90 / 100);
+                monthly_amount_6 = monthly_amount * (95 / 100);
+                investment_set_1 = monthly_amount_1 * month_set_1;
+                investment_set_2 = monthly_amount_2 * month_set_2;
+                investment_set_3 = monthly_amount_3 * month_set_2;
+                investment_set_4 = monthly_amount_4 * month_set_2;
+                investment_set_5 = monthly_amount_5 * month_set_2;
+                investment_set_6 = monthly_amount_6 * month_set_2;
+                investment_set_7 = monthly_amount * month_set_3;
+                total_investment = monthly_amount + investment_set_1 + investment_set_2 + investment_set_3 + investment_set_4 + investment_set_5 + investment_set_6 + investment_set_7;
+                money_recieved_at_end = chitti_amount * (95 / 100);
+                net_profit = money_recieved_at_end - total_investment;
+                return_on_investment = net_profit / total_investment * 100;
+                return_on_investment = return_on_investment.toFixed(2);
+                
+                months_already_paid = document.getElementById('months_already_paid_form').value;
+                percent_paid = months_already_paid / total_months;
+                months_left_to_pay = total_months - months_already_paid;
+                    
+                if (percent_paid <= 0.36) {
+                        remaining_due = total_investment - (monthly_amount + monthly_amount_1 * (months_already_paid - 1));
+                    } else {
+                        if (percent_paid <= 0.48) {
+                            remaining_due = total_investment - (monthly_amount + investment_set_1 + monthly_amount_2 * (total_months * (percent_paid - 0.36)));
+                        } else {
+                            if (percent_paid <= 0.60) {
+                                remaining_due = total_investment - (monthly_amount + investment_set_1 + investment_set_2 + monthly_amount_3 * (total_months * (percent_paid - 0.48)));
+                            } else {
+                                if (percent_paid <= 0.72) {
+                                    remaining_due = total_investment - (monthly_amount + investment_set_1 + investment_set_2 + investment_set_3 + monthly_amount_4 * (total_months * (percent_paid - 0.60)));
+                                } else {
+                                    if (percent_paid <= 0.84) {
+                                        remaining_due = total_investment - (monthly_amount + investment_set_1 + investment_set_2 + investment_set_3 + investment_set_4 + monthly_amount_5 * (total_months * (percent_paid - 0.72)));
+                                    } else {
+                                        if (percent_paid <= 0.96) {
+                                            remaining_due = total_investment - (monthly_amount + investment_set_1 + investment_set_2 + investment_set_3 + investment_set_4 + investment_set_5 + monthly_amount_6 * (total_months * (percent_paid - 0.84)));
+                                        } else {
+                                            if (percent_paid <= 100) {
+                                                remaining_due = total_investment - (monthly_amount + investment_set_1 + investment_set_2 + investment_set_3 + investment_set_4 + investment_set_5 + investment_set_6 + monthly_amount * (total_months * (percent_paid - 0.96)));
+                                            } else {
+                                                console.log("VALUE OF MONTHS COVERED IS WRONG");
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                already_paid = total_investment - remaining_due;
+                monthly_amount = "₹" + monthly_amount;
+                total_investment = "₹" + total_investment;
+                money_recieved_at_end = "₹" + money_recieved_at_end;
+                net_profit = "₹" + net_profit;
+                already_paid = "₹" + already_paid;
+                remaining_due = "₹" + remaining_due;
+                return_on_investment+= "%";
+                
+                document.getElementById('monthly_amount_form').value = monthly_amount;
+                document.getElementById('total_investment_form').value = total_investment;
+                document.getElementById('money_recieved_at_end_form').value = money_recieved_at_end;
+                document.getElementById('net_profit_form').value = net_profit;
+                document.getElementById('initial_investement_form').value = already_paid;
+                document.getElementById('remaining_due_form').value = remaining_due;
+                document.getElementById('roi_form').value = return_on_investment;
+            }
+
+            </script>
+    </head>
+    <body>
+        <h1 class="main4">CHITTI CALCULATOR</h1>
+        <div class="mainresult">
+            <h4>Total Months:</h4>
+            <h4>Chitti Amount:</h4>
+            <h4>Months Already Paid:</h4>
+            <h4>Monthly Amount:</h4>
+            <h4>Total Investment:</h4>
+            <h4>Money Recieved At End:</h4>
+            <h4>Net Profit:</h4>
+            <h4>Initial Investment:</h4>
+            <h4>Remaining Due:</h4>
+            <h4>ROI:</h4>
+        </div>
+        <div class ="forms">
+            <form>
+                <input type="number" class="form6" id="total_months_form" placeholder="Required">
+            </form>
+            <form>
+                <input type="number" class="form6" id="chitti_amount_form" placeholder="Required">
+            </form>
+            <form>
+                <input type="number" class="form6" id="months_already_paid_form" placeholder="Required">
+            </form>
+            <form>
+                <input type="text" class="form6" id="monthly_amount_form" readonly>
+            </form>
+
+            <form>
+                <input type="text" class="form6" id="total_investment_form" readonly>
+            </form>
+            <form>
+                <input type="text" class="form6" id="money_recieved_at_end_form" readonly>
+            </form>
+            <form>
+                <input type="text" class="form6" id="net_profit_form" readonly>
+            </form>
+            <form>
+                <input type="text" class="form6" id="initial_investement_form" readonly>
+            </form>
+            <form>
+                <input type="text" class="form6 result" id="remaining_due_form" readonly>
+            </form>
+            <form>
+                <input type="text" class="form6 result" id="roi_form" readonly>
+            </form>
+            <input type="button" value="Submit" class="button-1" onclick="calculate()">
+        </div>
+    </body>
+</html>
